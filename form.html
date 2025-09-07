@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>form example</title>
+        <style>
+               body {
+                background-image: url('https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1200&q=80');
+                min-height: 100vh;
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .div {
+                /* No need for position or width/height here */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-width: 5px;
+                color: beige;
+                background-color: rgb(4, 4, 167);
+                width: 450px;
+                height: 350px;
+                border-radius: 50px;
+            }
+
+        </style>
+        <script>
+            function validateForm(event) {
+                var name = document.getElementById('name');
+                var email = document.getElementById('email');
+                var password = document.getElementById('password');
+                if(name.value == "" || email.value == "" || password.value == ""){
+                    alert("please fill all the details");
+                    event.preventDefault(); 
+                }
+                else{
+                    alert("form submitted successfully");
+                    event.preventDefault();
+                    window.location.href = 'next page.html';
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class = "div">
+        <form class="form" action="/submit_feedback" method="post" onsubmit = "">
+            <legend>please kindly fill the provided form</legend><br>
+            <label>Name:</label><br>
+            <input type="text" placeholder="Enter your name"  id = "name"required><br>
+            <label>Email:</label><br>
+            <input type="email" placeholder="Enter your email" id = "email" required><br>
+            <label>Password:</label><br>
+            <input type="password" placeholder="Enter your password" id = "password" required><br>
+            <label>please share your experience with this form</label><br>
+            <textarea rows="5" cols="50" placeholder="describe your experience" required></textarea><br>
+            <button type="submit" >submit</button>
+        </form>
+        </div>
+    </body>
+</html>
+
+
